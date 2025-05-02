@@ -1,36 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const body = document.body;
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const currentTheme = localStorage.getItem('theme');
-
-    // Apply saved theme on load
-    if (currentTheme) {
-        body.classList.add(currentTheme); // Assumes theme is 'dark-mode'
-        if (currentTheme === 'dark-mode') {
-            darkModeToggle.textContent = '☀️'; // Sun for dark mode
-        }
-    } else {
-        // Optional: Check system preference
-        // if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        //     body.classList.add('dark-mode');
-        //     darkModeToggle.textContent = '☀️';
-        // }
-    }
-
-    // Dark Mode Toggle Button
-    darkModeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-
-        let theme = 'light-mode'; // Default is light
-        if (body.classList.contains('dark-mode')) {
-            theme = 'dark-mode';
-            darkModeToggle.textContent = '☀️'; // Sun icon
-        } else {
-             darkModeToggle.textContent = '🌙'; // Moon icon
-        }
-        localStorage.setItem('theme', theme); // Save preference
-    });
 
     // Mobile Navigation Toggle
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');

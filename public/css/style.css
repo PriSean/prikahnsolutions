@@ -1,35 +1,22 @@
 /* --- Global Styles & Variables --- */
 :root {
-  --primary-color: #4A90E2; /* Example blue */
-  --secondary-color: #50E3C2; /* Example teal */
-  --text-color: #333;
-  --bg-color: #FFFFFF;
-  --bg-gradient-start: rgba(240, 245, 250, 0.8);
-  --bg-gradient-end: rgba(210, 225, 240, 0.8);
-  --glass-bg: rgba(255, 255, 255, 0.15);
-  --glass-border: rgba(255, 255, 255, 0.3);
-  --card-bg: #f9f9f9;
-  --footer-bg: #f1f1f1;
-  --font-main: 'Inter', sans-serif;
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  --transition-speed: 0.3s ease;
-}
-
-.dark-mode {
-  --primary-color: #58A6FF; /* Lighter blue for dark */
-  --secondary-color: #79C0FF; /* Lighter teal for dark */
+  --primary-color: #58A6FF;
+  --secondary-color: #79C0FF;
   --text-color: #e1e1e1;
-  --bg-color: #121212; /* Dark background */
+  --bg-color: #121212;
   --bg-gradient-start: rgba(20, 30, 40, 0.8);
   --bg-gradient-end: rgba(10, 15, 25, 0.8);
   --glass-bg: rgba(40, 40, 40, 0.25);
   --glass-border: rgba(255, 255, 255, 0.15);
   --card-bg: #1e1e1e;
   --footer-bg: #181818;
+  --font-main: 'Inter', sans-serif;
+  --max-width: 1100px;
+  --border-radius: 12px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --transition-speed: 0.3s ease;
 }
+
 
 * {
   margin: 0;
@@ -46,7 +33,7 @@ body {
   font-family: var(--font-main);
   color: var(--text-color);
   background-color: var(--bg-color);
-  background-image: url('../img/background.png'); /* Blurred gradient background */
+  background-image: url('../img/background.jpg'); /* Blurred gradient background */
   background-size: cover;
   background-position: center center;
   background-attachment: fixed; /* Parallax-like effect */
@@ -251,8 +238,29 @@ section {
   max-width: 800px;
   margin: 0 auto;
 }
-.about-section p {
+.about-bullets {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-top: 1.5rem;
+}
+
+.about-bullets li::before {
+  content: '•';
+  color: var(--primary-color);
+  font-weight: bold;
+  display: inline-block;
+  width: 1.2em;
+  margin-left: -1.2em;
+}
+
+.dark-mode .about-bullets li::before {
+  color: var(--primary-color);
 }
 
 /* --- Services Section --- */
