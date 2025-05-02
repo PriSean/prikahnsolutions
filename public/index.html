@@ -5,30 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prikahn Solutions</title>
   <link rel="icon" type="image/png" href="img/favicon.png" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <script src="js/script.js" defer></script>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-  <!-- Header -->
-  <header class="text-center py-12">
-    <img src="img/logo.png" alt="Prikahn Logo" class="mx-auto w-20 h-20">
-    <h1 class="text-4xl font-bold mt-4">Prikahn Solutions</h1>
-    <p class="text-gray-500 dark:text-gray-400">Simple mobile apps and dashboards built for small businesses</p>
-  </header>
+<body>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Prikahn Solutions</h1>
+    <p class="tagline">Helping Louisville businesses grow with clean, custom websites and dashboards.</p>
+    <p class="identity">Built by Sean — a Trinity High School student and full-stack developer</p>
+    <button class="cta-button">Request a Free Quote</button>
+  </section>
 
-  <!-- Showcase -->
-  <section class="text-center py-16">
-    <h2 class="text-2xl font-semibold mb-6">Sample Project Preview</h2>
-    <div class="max-w-xl mx-auto rounded-xl overflow-hidden shadow-lg border border-gray-700">
-      <img src="img/og-preview.png" alt="Project preview" class="w-full object-cover" />
+  <!-- About -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      I’m Sean, a high school junior at Trinity in Louisville. I design and develop full-featured websites and dashboards
+      that help local businesses present themselves professionally and connect with more customers. I also offer
+      documentation and support so you can easily manage or update your project later, even without a developer.
+    </p>
+  </section>
+
+  <!-- Services -->
+  <section class="services">
+    <h2>What I Offer</h2>
+    <ul>
+      <li>Custom mobile-friendly websites</li>
+      <li>Business dashboards with analytics, charts, and more</li>
+      <li>Full support after launch</li>
+      <li>Clean, documented code you can edit in the future</li>
+    </ul>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="portfolio">
+    <h2>Sample Projects</h2>
+    <p id="portfolio-sample">Sample Project 1: PrikahnFinance dashboard layout mockup</p>
+    <div class="carousel-buttons">
+      <button onclick="cyclePortfolio(-1)">&larr;</button>
+      <button onclick="cyclePortfolio(1)">&rarr;</button>
     </div>
-    <p class="text-gray-500 dark:text-gray-400 mt-4">This is a placeholder preview. More coming soon.</p>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>Client Testimonials</h2>
+    <p id="testimonial">"Sample Testimonial 1: Sean helped create a great design for my online presence."</p>
+    <div class="carousel-buttons">
+      <button onclick="cycleTestimonial(-1)">&larr;</button>
+      <button onclick="cycleTestimonial(1)">&rarr;</button>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section class="quote-form">
+    <h2>Request a Free Quote</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="What do you need help with?" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center py-6 text-sm text-gray-400">
-    &copy; 2025 Prikahn Solutions. All rights reserved.
+  <footer>
+    &copy; 2025 Prikahn Solutions • Built in Louisville, KY
   </footer>
 </body>
 </html>
