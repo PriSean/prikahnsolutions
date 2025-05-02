@@ -1,83 +1,175 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prikahn Solutions</title>
-  <link rel="icon" type="image/png" href="img/favicon.png" />
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <script src="js/script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prikahn Solutions - Web & App Development</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- AOS Library CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Hero -->
-  <section class="hero" data-aos="fade-in">
-    <h1>Prikahn Solutions</h1>
-    <p class="tagline">Helping Louisville businesses grow with clean, custom websites and dashboards.</p>
-    <p class="identity">Built by Sean — a Trinity High School student and full-stack developer</p>
-    <button class="cta-button">Request a Free Quote</button>
-  </section>
+    <!-- Navigation / Header Utility -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo-link"><img src="img/logo.png" alt="Prikahn Solutions Logo" class="logo"></a>
+            <div class="nav-links">
+                 <a href="#about">About</a>
+                 <a href="#services">Services</a>
+                 <a href="#projects">Projects</a>
+                 <a href="#testimonials">Testimonials</a>
+                 <a href="#contact">Contact</a>
+                 <button id="darkModeToggle" class="dark-mode-toggle">🌙</button>
+             </div>
+             <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button> <!-- Hamburger -->
+        </div>
+    </nav>
 
-  <!-- About -->
-  <section class="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>
-      I’m Sean, a high school junior at Trinity in Louisville. I design and develop full-featured websites and dashboards
-      that help local businesses present themselves professionally and connect with more customers. I also offer
-      documentation and support so you can easily manage or update your project later, even without a developer.
-    </p>
-  </section>
+    <main>
+        <!-- 🔷 Hero Section -->
+        <header id="hero" class="hero-section">
+            <div class="container" data-aos="fade-in">
+                <h1 class="hero-title">Prikahn Solutions</h1>
+                <p class="hero-subtitle">Helping Louisville businesses grow with clean, custom websites and dashboards.</p>
+                <p class="hero-identity">Built by Sean McCulloch — a Trinity High School student and full-stack developer.</p>
+                <a href="#contact" class="cta-button" data-aos="fade-up" data-aos-delay="200">Request a Free Quote</a>
+            </div>
+        </header>
 
-  <!-- Services -->
-  <section class="services" data-aos="fade-up">
-    <h2>What I Offer</h2>
-    <ul>
-      <li data-aos="zoom-in">Custom mobile-friendly websites</li>
-      <li data-aos="zoom-in">Business dashboards with analytics, charts, and more</li>
-      <li data-aos="zoom-in">Full support after launch</li>
-      <li data-aos="zoom-in">Clean, documented code you can edit in the future</li>
-    </ul>
-  </section>
+        <!-- 🧑‍💻 About Me -->
+        <section id="about" class="about-section">
+            <div class="container glass-effect" data-aos="fade-right">
+                <h2>About Me</h2>
+                <p>Hi, I'm Sean McCulloch, a junior at Trinity High School with a passion for coding. I create modern, mobile-friendly websites and practical web dashboards tailored for small businesses right here in Louisville.</p>
+                <p>My focus is on delivering high-quality products with clean, maintainable code that others can easily understand and update later. I'm committed to providing friendly, ongoing support to ensure your digital presence thrives.</p>
+            </div>
+        </section>
 
-  <!-- Portfolio -->
-  <section class="portfolio" data-aos="fade-up">
-    <h2>Sample Projects</h2>
-    <p id="portfolio-sample">Sample Project 1: PrikahnFinance dashboard layout mockup</p>
-    <div class="carousel-buttons">
-      <button onclick="cyclePortfolio(-1)">&larr;</button>
-      <button onclick="cyclePortfolio(1)">&rarr;</button>
-    </div>
-  </section>
+        <!-- 🛠 What I Offer -->
+        <section id="services" class="services-section">
+            <div class="container" data-aos="fade-left">
+                <h2>What I Offer</h2>
+                <ul class="service-list">
+                    <li data-aos="fade-up" data-aos-delay="100">✅ Custom website design and development</li>
+                    <li data-aos="fade-up" data-aos-delay="200">✅ Responsive, mobile-friendly layouts</li>
+                    <li data-aos="fade-up" data-aos-delay="300">✅ Interactive business dashboards</li>
+                    <li data-aos="fade-up" data-aos-delay="400">✅ Clean code that's easy to update</li>
+                    <li data-aos="fade-up" data-aos-delay="500">✅ Friendly, reliable ongoing support</li>
+                </ul>
+            </div>
+        </section>
 
-  <!-- Testimonials -->
-  <section class="testimonials" data-aos="fade-up">
-    <h2>Client Testimonials</h2>
-    <p id="testimonial">"Sample Testimonial 1: Sean helped create a great design for my online presence."</p>
-    <div class="carousel-buttons">
-      <button onclick="cycleTestimonial(-1)">&larr;</button>
-      <button onclick="cycleTestimonial(1)">&rarr;</button>
-    </div>
-  </section>
+        <!-- 🎨 Sample Projects -->
+        <section id="projects" class="projects-section">
+            <div class="container" data-aos="zoom-in-up">
+                <h2>Sample Projects</h2>
+                <div class="carousel" data-carousel="projects">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active glass-effect">
+                            <h3>PrikahnFinance – Dashboard UI</h3>
+                            <p>A sleek interface concept for financial data visualization.</p>
+                            <img src="https://via.placeholder.com/400x250/CCCCCC/333333?text=Project+1+Placeholder" alt="Sample Project 1">
+                        </div>
+                        <div class="carousel-item glass-effect">
+                            <h3>Landing Page Mockup</h3>
+                            <p>Design for a modern product landing page focused on conversion.</p>
+                            <img src="https://via.placeholder.com/400x250/CCCCCC/333333?text=Project+2+Placeholder" alt="Sample Project 2">
+                        </div>
+                        <div class="carousel-item glass-effect">
+                            <h3>Mobile App Interface</h3>
+                            <p>User interface design for a conceptual mobile application.</p>
+                             <img src="https://via.placeholder.com/400x250/CCCCCC/333333?text=Project+3+Placeholder" alt="Sample Project 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control prev" data-carousel-control="prev"><</button>
+                    <button class="carousel-control next" data-carousel-control="next">></button>
+                </div>
+            </div>
+        </section>
 
-  <!-- Quote Form -->
-  <section class="quote-form" data-aos="fade-up">
-    <h2>Request a Free Quote</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="What do you need help with?" required></textarea>
-      <button type="submit">Submit</button>
-    </form>
-  </section>
+        <!-- 💬 Testimonials -->
+        <section id="testimonials" class="testimonials-section">
+            <div class="container" data-aos="zoom-in-up">
+                <h2>What Clients Say</h2>
+                 <div class="carousel" data-carousel="testimonials">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active glass-effect">
+                            <p>"Sean was great to work with, very responsive, and delivered exactly what we needed for our small business."</p>
+                            <span>- Local Restaurant Owner</span>
+                        </div>
+                        <div class="carousel-item glass-effect">
+                             <p>"Our new site looks highly professional and runs significantly faster than the old one. Highly recommend!"</p>
+                            <span>- Small Retail Shop</span>
+                        </div>
+                        <div class="carousel-item glass-effect">
+                            <p>"Fantastic communication and a really clean design. Sean understood our vision perfectly."</p>
+                           <span>- Service Provider</span>
+                       </div>
+                    </div>
+                    <button class="carousel-control prev" data-carousel-control="prev"><</button>
+                    <button class="carousel-control next" data-carousel-control="next">></button>
+                </div>
+            </div>
+        </section>
 
-  <!-- Footer -->
-  <footer data-aos="fade-in">
-    &copy; 2025 Prikahn Solutions • Built in Louisville, KY
-  </footer>
+        <!-- 📬 Request a Free Quote -->
+        <section id="contact" class="contact-section">
+            <div class="container glass-effect" data-aos="fade-up">
+                <h2>Request a Free Quote</h2>
+                <form id="quoteForm" action="YOUR_FORM_ENDPOINT" method="POST">
+                    <!-- Add a service like Formspree (https://formspree.io/) or Netlify Forms for handling -->
+                    <input type="hidden" name="_subject" value="New Quote Request from Prikahn Solutions Website">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="details">Project Details:</label>
+                        <textarea id="details" name="details" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Submit Request</button>
+                </form>
+                <div id="form-status"></div> <!-- For success/error messages -->
+            </div>
+        </section>
+    </main>
 
-  <script>
-    AOS.init({ duration: 800, once: true });
-  </script>
+    <!-- 🔻 Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <p>© <span id="currentYear"></span> Prikahn Solutions • Built in Louisville, KY</p>
+            <!-- Optional Social Links -->
+            <div class="social-links">
+                 <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a> |
+                 <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Library JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Basic AOS initialization
+        AOS.init({
+            duration: 800, // values from 0 to 3000, with step 50ms
+            once: true, // whether animation should happen only once - while scrolling down
+        });
+    </script>
+
+    <!-- Custom Script -->
+    <script src="js/script.js"></script>
 </body>
 </html>
