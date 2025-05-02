@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div id="particles-js"></div>
     <!-- Navigation / Header Utility -->
     <nav class="navbar">
         <div class="container">
@@ -126,6 +127,20 @@
             </div>
         </section>
 
+        <section id="tools" class="tools-section" data-aos="fade-up">
+          <div class="container glass-effect">
+            <h2>Tools I Use</h2>
+            <div class="tool-logos">
+              <img src="img/html.svg" alt="HTML" title="HTML">
+              <img src="img/css.svg" alt="CSS" title="CSS">
+              <img src="img/javascript.svg" alt="JavaScript" title="JavaScript">
+              <img src="img/github.svg" alt="GitHub" title="GitHub">
+              <img src="img/bootstrap.svg" alt="Bootstrap" title="Bootstrap">
+            </div>
+          </div>
+        </section>
+        
+
         <!-- 📬 Request a Free Quote -->
         <section id="contact" class="contact-section">
             <div class="container glass-effect" data-aos="fade-up">
@@ -173,6 +188,27 @@
             once: true, // whether animation should happen only once - while scrolling down
         });
     </script>
+<!-- Particles.js Library -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<!-- Initialize Particles.js -->
+<script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 35, "density": { "enable": true, "value_area": 800 }},
+      "color": { "value": "#58A6FF" },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.2 },
+      "size": { "value": 3 },
+      "move": { "enable": true, "speed": 1 }
+    },
+    "interactivity": {
+      "events": { "onhover": { "enable": true, "mode": "repulse" }},
+      "modes": { "repulse": { "distance": 100 }}
+    },
+    "retina_detect": true
+  });
+</script>
 
     <!-- Custom Script -->
     <script src="js/script.js"></script>

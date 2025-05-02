@@ -135,6 +135,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+// smart nav
+    let lastScrollY = window.scrollY;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > lastScrollY) {
+    navbar.style.top = '-80px'; // Hide
+  } else {
+    navbar.style.top = '0'; // Show
+  }
+  lastScrollY = window.scrollY;
+});
+
 
 
 }); // End DOMContentLoadeds
