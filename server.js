@@ -1,19 +1,15 @@
 const express = require('express');
 const path = require('path');
+const compression = require('compression');
+const helmet = require('helmet');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Enable compression and security headers
+app.use(compression());
+app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// Set security headers
-app.use((req, res, next) => {
-  res.setHeader('X-Content-Type-Options', 'nosniff');
-  res.setHeader('X-Frame-Options', 'DENY');
-  res.setHeader('X-XSS-Protection', '1; mode=block');
-  next();
-});
 
 // Serve static files from the React app build folder
 const staticPath = path.join(__dirname, 'prikahn-solutions/build');
@@ -24,10 +20,7 @@ app.use(express.static(staticPath, {
 
 // Serve index.html on all unknown routes (for React Router)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(staticPath, 'index.html'), {
-    maxAge: '1d',
-    etag: true
-  });
+  res.sendFile(path.join(staticPath, 'index.html'));
 });
 
 // Error handling middleware
