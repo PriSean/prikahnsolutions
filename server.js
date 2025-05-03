@@ -7,12 +7,24 @@ const PORT = process.env.PORT || 3000;
 
 // Enable compression and security headers
 app.use(compression());
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: false // Disable CSP for development
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve static files from the React app build folder
 const staticPath = path.join(__dirname, 'prikahn-solutions/build');
+console.log('Static path:', staticPath);
+
+// Verify the build directory exists
+const fs = require('fs');
+if (!fs.existsSync(staticPath)) {
+  console.error('Build directory not found:', staticPath);
+  console.error('Please run npm run build first');
+  process.exit(1);
+}
+
 app.use(express.static(staticPath, {
   maxAge: '1d',
   etag: true
