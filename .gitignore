@@ -2,10 +2,6 @@
 node_modules/
 prikahn-solutions/node_modules/
 
-# Build output
-prikahn-solutions/build/
-build/
-
 # Environment variables
 .env
 .env.local
