@@ -6,7 +6,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "build": "cd prikahn-solutions && npm install && npm run build",
+    "heroku-postbuild": "npm run build",
     "install-all": "npm install && cd prikahn-solutions && npm install"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
   },
   "keywords": [],
   "author": "",

@@ -16,14 +16,15 @@ app.use((req, res, next) => {
 });
 
 // Serve static files from the React app build folder
-app.use(express.static(path.join(__dirname, 'prikahn-solutions/build'), {
-  maxAge: '1d', // Cache static files for 1 day
+const staticPath = path.join(__dirname, 'prikahn-solutions/build');
+app.use(express.static(staticPath, {
+  maxAge: '1d',
   etag: true
 }));
 
 // Serve index.html on all unknown routes (for React Router)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'prikahn-solutions/build', 'index.html'), {
+  res.sendFile(path.join(staticPath, 'index.html'), {
     maxAge: '1d',
     etag: true
   });
@@ -38,5 +39,5 @@ app.use((err, req, res, next) => {
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-  console.log(`Serving static files from: ${path.join(__dirname, 'prikahn-solutions/build')}`);
+  console.log(`Serving static files from: ${staticPath}`);
 });
